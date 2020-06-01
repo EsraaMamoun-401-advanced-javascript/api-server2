@@ -6,7 +6,7 @@
 
 ### Links and Resources
 
-- [submission PR]()
+- [submission PR](https://github.com/EsraaMamoun-401-advanced-javascript/api-server2/pull/1)
 - [ci/cd](https://github.com/EsraaMamoun-401-advanced-javascript/api-server2/actions) (GitHub Actions)
 <!-- - [back-end server url](http://xyz.com) (when applicable) -->
 <!-- - [front-end application](http://xyz.com) (when applicable) -->
