@@ -1,0 +1,65 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Esra'a Mamoun",
+      "display_name": "Learn",
+      "description": "Coding"
+    },
+    {
+      "name": "Art",
+      "display_name": "graphic",
+      "description": "univesity",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "name": "Education",
+      "display_name": "Physics",
+      "description": "Studing"
+    },
+    {
+      "name": "lion",
+      "display_name": "animal",
+      "description": "King of the Jungle",
+      "id": "yczTUmn"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "category": "College",
+      "name": "Esra'a Mamoun",
+      "display_name": "Learn",
+      "description": "Coding"
+    },
+    {
+      "id": "2",
+      "category": "Sports",
+      "name": "Shahed Sartawi",
+      "display_name": "Soccer",
+      "description": "Training"
+    },
+    {
+      "id": "3",
+      "category": "Scince",
+      "name": "Amal Ahmad",
+      "display_name": "Physics",
+      "description": "Studing"
+    },
+    {
+      "id": "4",
+      "category": "electronics",
+      "name": "Mamoun Abdel-Qader",
+      "display_name": "Physics",
+      "description": "Engenering"
+    },
+    {
+      "category": "Cuntry",
+      "name": "Jordan",
+      "display_name": "Asia",
+      "description": "Beautiful country",
+      "id": "Bkk6z7c"
+    }
+  ]
+}
