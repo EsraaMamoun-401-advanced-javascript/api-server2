@@ -23,10 +23,19 @@
 - timestamp.js
 - 404.js
 - 500.js
+- products-collection.js
+- products-schema.js
+- categories.collection.js
+- categories-schema.js
+- model.js
+- categories.js
+- product.js
 
 ### Packages
 - supertest
+- mongoose
 - express
+- morgan
 - jest
 
 #### How to initialize/run your application (where applicable)
