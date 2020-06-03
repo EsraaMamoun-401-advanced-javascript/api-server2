@@ -25,20 +25,20 @@ function getOneCategorie(req, res, next) {
     .catch(next);
 }
 
-function postCategorie(req,res, next ) {
+function postCategorie(req, res, next) {
   categorie.post(req.body)
     .then(data => {
       res.status(201).json(data);
     }).catch(next);
 }
 
-function putCategorie(req,res, next ) {
+function putCategorie(req, res, next) {
   categorie.update(req.params.id, req.body)
     .then(data => res.status(200).json(data))
     .catch(next);
 }
 
-function deleteCategorie(req,res, next) {
+function deleteCategorie(req, res, next) {
   categorie.delete(req.params.id)
     .then(data => {
       res.status(200).json(data);
