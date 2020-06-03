@@ -40,10 +40,10 @@
 #### Tests
 
 * How do you run tests?
- <!-- > - Jest test: `npm test` - to run the test for two files  -->
+ > - Jest test: `npm test` - to run the test for two files 
  > - console.log
 <!-- - Any tests of note?
 - Describe any tests that you did not complete, skipped, etc -->
 
 #### UML
-![UML]()
+![UML](./img/UML.jpeg)
