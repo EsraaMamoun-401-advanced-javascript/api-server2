@@ -73,8 +73,58 @@ describe('categories and products', () => {
 
   });
 
+  it('get /products', () => {
+    return mockRequest
+      .get('/api/v1/products')
+      .then(results => {
+        expect(results.status).toBe(200);
+      });
+  });
+
+  it('post /products', () => {
+    let testObj = { 'category': 'test', 'name': 'test', description: 'test' };
+    return mockRequest
+      .post('/api/v1/products')
+      .send(testObj)
+      .then(results => {
+        theId = results.body._id;
+        expect(results.status).toBe(201);
+        Object.keys(testObj).forEach(key => {
+          expect(results.body[key]).toEqual(testObj[key]);
+        });
+      });
+  });
+
+  it('get /products/:id', () => {
+    return mockRequest
+      .get(`/api/v1/products/${theId}`)
+      .then(results => {
+        expect(results.status).toBe(200);
+      });
+  });
+
+  it('put /products/:id', () => {
+    let testObj = { 'category': 'test', 'name': 'test', description: 'test' };
+    return mockRequest
+      .put(`/api/v1/products/${theId}`, testObj)
+      .send(testObj)
+      .then(results => {
+        expect(results.status).toBe(200);
+        Object.keys(testObj).forEach(key => {
+          expect(results.body[key]).toEqual(testObj[key]);
+        });
+      });
+  });
+
+  it('delete /api/v1/products/:id', () => {
+    return mockRequest
+      .delete(`/api/v1/products/${theId}`)
+      .then(results => {
+        expect(results.status).toBe(200);
+      });
+  });
   
-  it('get /wrong', () => {
+  it('get wrong', () => {
     return mockRequest
       .get('/api/v1/wrong')
       .then(results => {
