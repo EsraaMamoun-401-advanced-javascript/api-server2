@@ -1,6 +1,6 @@
 'use strict';
 
-const loggerMiddleWare = require('../lib/middleware/logger.js');
+const loggerMiddleWare = require('../middleware/logger.js');
 
 describe('logger middleware module', () => {
   let consoleSpy;
