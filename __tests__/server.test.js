@@ -3,8 +3,24 @@
 const {server} = require('../lib/server.js');  // We can use also: // const serverMod = require('../lib/server'); // const server = serverMod.server;
 const supertest = require('supertest'); 
 const mockRequest = supertest(server);
+const timestamp = require('../middleware/timestamp');
+let req = {};
+let res = {};
+let next = jest.fn();
 
 describe('web server', () => {
+
+  it('timestamp', () => {
+    timestamp(req, res, next);
+    expect(req.requestTime).toBeUndefined();
+  });
+
+  it('moved to next', () => {
+    timestamp(req, res, next);
+    expect(next).toHaveBeenCalled();
+  });
+
+
   it('should respond with 500', ()=> {
         
     return mockRequest.get('/bad')
@@ -22,65 +38,4 @@ describe('web server', () => {
       }).catch(console.log);
   });
 
-  it('should respond properly / (Home page)', ()=> {
-    return mockRequest
-      .get('/?name=esraa')
-      .then(results => {
-        expect(results.status).toBe(200);
-      });
-  });
-
-  let routs = ['products', 'categories'];
-
-  routs.forEach((rout) => {
-    it(`should post ${rout} data`, ()=> {
-      return mockRequest
-        .post(`/${rout}`)
-        .send({name: 'test name'})
-        .then(results => {
-          expect(results.status).toBe(201);
-        });
-    });
-    
-    it(`should get ${rout} data`, ()=> {
-      return mockRequest
-        .get(`/${rout}`)
-        .then(results => {
-          expect(results.status).toBe(200);
-        });
-    });
-    
-    it(`should get ${rout} data by Id`, ()=> {
-      return mockRequest
-        .get(`/${rout}/1`)
-        .then(results => {
-          expect(results.status).toBe(200);
-        });
-    });
-    
-    it(`should put ${rout} data with Id`, ()=> {
-      return mockRequest
-        .put(`/${rout}/1`)
-        .then(results => {
-          expect(results.status).toBe(200);
-        });
-    });
-
-    it(`should patch ${rout} data with Id`, ()=> {
-      return mockRequest
-        .patch(`/${rout}/1`)
-        .then(results => {
-          expect(results.status).toBe(200);
-        });
-    });
-
-    it(`should delete ${rout} data with Id`, ()=> {
-      return mockRequest
-        .delete(`/${rout}/1`)
-        .then(results => {
-          expect(results.status).toBe(200);
-        });
-    });
-  });
-  
 });
